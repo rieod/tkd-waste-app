@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
   box-sizing: border-box;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container .flex-form{
+  flex-grow: 3;
+  align-content: center;
+  margin-left: 2rem;
+  padding-left: 3rem;
+}
+
+.flex-container .flex-illust{
+  flex-grow: 5;
+}
+
+.flex-container .flex-illust img{
+  width: 100%;
+  height: auto;
 }
 
 body {
@@ -13,39 +35,21 @@ body {
   min-height: 100vh;
 }
 
-header {
-  text-align: left;
-  width: 35%;
+form {
+  width: 100%;
+  flex: 1;
   margin: 3rem auto;
   padding: 2rem;
 }
 
-header img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  filter: drop-shadow(0 0 4px rgba(51, 51, 51, 0.15));
-}
-
-header h1 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: 4.5rem;
-  margin: .25rem 0;
+form a{
+  font-weight: 700;
+  text-decoration: none;
   color: #004AAD;
 }
 
-header p{
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  margin: .25rem 0;
-}
-
-form {
-  width: 35%;
-  margin: 3rem auto;
-  padding: 2rem;
+form a:hover{
+  color : #FFC72C;
 }
 
 .control,
@@ -63,14 +67,15 @@ fieldset {
   color: #000000;
   text-transform: capitalize;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .control input {
   display: block;
   width: 100%;
-  padding: 0.5rem;
+  padding: .75rem;
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: 5px;
   border: 2px solid #80A5D6;
   background-color: #ffffff;
   color: #a7a7a7;
@@ -112,11 +117,11 @@ fieldset {
 .button {
   display: block;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: .5rem 0;
   text-align: center;
   font-weight: 600;
-  font-size: 1rem;
-  border-radius: 4px;
+  font-size: 1.5rem;
+  border-radius: 5px;
   border: none;
   background-color: #004AAD;
   color: #ffffff;
@@ -127,8 +132,16 @@ fieldset {
 .button:focus {
   background-color: #80A5D6;
   color: #004AAD;
+  
 }
 
-img{
-  width: 100%;
+@media (max-width: 1500px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-container .flex-form {
+    padding: 3rem;
+  }
 }
+
