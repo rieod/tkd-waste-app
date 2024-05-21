@@ -12,6 +12,7 @@
     background-color: #004AAD;
     color: white;
     font-weight: 500;
+    max-height: 48px;
 }
 
 .flex-navbar{
@@ -27,7 +28,7 @@
 }
 
 .flex-navbar li img{
-    max-height: 76px;
+    max-height: 48px;
     width: auto;
 }
 
@@ -54,7 +55,8 @@
 
 .btn-userdropdwn .material-icons{
     vertical-align: middle;
-    margin-right: auto;
+    margin: 0 8px;
+    max-height: 48px;
 }
 
 
@@ -69,6 +71,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 1.25rem;
     align-self: center;
+    width: 175px;
 }
   
 .userdropdwn-content a {
