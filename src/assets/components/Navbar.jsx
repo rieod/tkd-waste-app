@@ -11,7 +11,10 @@ export default function Navbar(){
                 <li>QR Generator</li>
             </ul>
             <ul className='flex-userdropdwn'>
-                <button className='btn-userdropdwn'>Username</button>
+                <button className='btn-userdropdwn'>
+                    <span className="material-icons">account_circle</span>Username
+                    <span className="material-icons">expand_more</span>
+                </button>
                 <div className="userdropdwn-content">
                     <a href="#">Logout</a>
                 </div>

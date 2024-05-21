@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Segment List */
+.segment-card{
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    padding: 24px 72px;
+    background-color: #fafafa;
+    align-items: center;
+}
+
+.segment-thumbnail img{
+    border-radius: 5px;
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.segment-info p {
+    color: #4c4c4c ;
+    font-size: 1rem;
+}
+
+.segment-info ul li{
+    text-decoration: none;
+    display: block;
+    align-content: center;
+    margin-top: 5px;
+    font-size: 1.25rem;
+    font-weight: 400;
+
+}
+
+.segment-info .material-icons{
+    color: #004AAD;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.segment-info h2{
+    color : #333333;
+    font-size: 1.75rem;
+    margin-top: 15px;
+}
+
+/* Segment Picture */
+.segment-picture{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Segment Table */
+table{
+    border-radius: 8px;
+    border-collapse: collapse;
+    color: black;
+    text-align: left;
+    width: 100%;
+    height: auto;
+}
+
+table thead{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #eaeaea;
+    border: 1px solid #a7a7a7;
+}
+
+table tbody{
+    font-size: 16px;
+    font-weight: 300;
+    background-color: white;
+    border: 1px solid #a7a7a7;
+}
+
+th, td {
+    padding: 10px;
+}
+
+.table-actionbutton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.table-actionbutton button{
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* Data Management */
+.datamanagement-content{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.flex-segmentlist{
+    flex-grow: 3;
+}
+
+.flex-segmentdetail{
+    flex-grow: 5;
+
+}
+
+@media (max-width: 800px) {
+    .segment-picture{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  }
