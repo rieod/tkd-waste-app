@@ -10,9 +10,12 @@
     display: flex;
     flex-direction: row;
     gap: 35px;
-    padding: 24px 72px;
-    background-color: #fafafa;
+    padding: 24px 48px;
+    background-color: white;
+    border-block: 1px solid #a7a7a7;
     align-items: center;
+
+    max-width: 740px;
 }
 
 .segment-thumbnail img{
@@ -34,7 +37,6 @@
     margin-top: 5px;
     font-size: 1.25rem;
     font-weight: 400;
-
 }
 
 .segment-info .material-icons{
@@ -46,15 +48,22 @@
 .segment-info h2{
     color : #333333;
     font-size: 1.75rem;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 /* Segment Picture */
 .segment-picture{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: stretch;
+    max-width: 100%;
+    height: auto;
 }
+
+.segment-picture>img{
+    flex: 1;
+}
+
 
 /* Segment Table */
 table{
@@ -94,15 +103,45 @@ th, td {
     align-self: center;
     border: none;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 1);
+
+}
+
+.filter-container{
+    display: flex;
+    flex-direction: row;
+    max-height: 50px; 
+    padding: 15px;
+    justify-content: space-evenly;
+    background-color: #fafafa;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); 
+}
+
+.filter-container input{
+    width: 400px;
+    padding: 5px;
+    border:  1px solid #a7a7a7;
+    border-radius: 5px;
+}
+
+.filter-container button{
+    padding: 5px;
+    background-color: white;
+    border:  1px solid #a7a7a7;
+    border-radius: 5px;
+    color: #4c4c4c;
+}
+
+.filter-container button .material-symbols-outlined{
+    vertical-align: middle;
+    margin-right: auto;
 }
 
 /* Data Management */
 .datamanagement-content{
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .flex-segmentlist{
@@ -112,9 +151,25 @@ th, td {
 .flex-segmentdetail{
     flex-grow: 5;
 
+    display: flex;
+    flex-direction: column;
 }
 
-@media (max-width: 800px) {
+.flex-segmenttable{
+    width: 75%;
+    align-self: center;
+    justify-self: center;
+
+    margin-top: 36px;
+}
+
+.flex-segmenttable table
+{
+    margin: 18px 0;
+}
+
+
+@media (max-width: 1800px) {
     .segment-picture{
         display: flex;
         flex-direction: column;

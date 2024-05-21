@@ -22,8 +22,13 @@
     padding-left: 40px;
 }
 
+.flex-navbar>ul{
+    flex: 1;
+}
+
 .flex-navbar li img{
     max-height: 76px;
+    width: auto;
 }
 
 .flex-userdropdwn{

@@ -5,6 +5,7 @@ import SegmentPicture from './SegmentPicture';
 import Navbar from './Navbar';
 
 import './style/Segment.css'
+import FilterBar from './FilterBar';
 
 export default function DataManagement(){
     return(
@@ -12,13 +13,15 @@ export default function DataManagement(){
             <Navbar />
             <div className='datamanagement-content'>
                 <div className='flex-segmentlist'>
-                    {/* <Filter/> */}
+                    <FilterBar/>
                     <SegmentList />
                 </div>
                 <div className='flex-segmentdetail'>
                     <SegmentPicture />
-                    <SegmentInfo />
-                    <SegmentTable />
+                    <div className='flex-segmenttable'>
+                        <SegmentInfo />
+                        <SegmentTable />
+                    </div>
                 </div>
             </div>
         </main>

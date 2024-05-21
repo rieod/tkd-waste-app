@@ -14,7 +14,7 @@ export default function SegmentTable(){
                 <th>Name</th>
                 <th>Category</th>
                 <th>Description</th>
-                <th>Action</th>
+                <th></th>
             </tr>
             </thead>
             {data.map((val,key)=>{
