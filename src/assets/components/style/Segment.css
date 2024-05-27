@@ -35,6 +35,7 @@
     display: block;
     align-content: center;
     margin-top: 5px;
+    margin-left: -3px;
     font-size: 1.25rem;
     font-weight: 400;
 }
@@ -119,9 +120,11 @@ th, td {
 
 .filter-container input{
     width: 400px;
-    padding: 5px;
+    padding: 10px;
     border:  1px solid #a7a7a7;
     border-radius: 5px;
+    color: #4c4c4c;
+    font-size: 18px;
 }
 
 .filter-container button{
@@ -130,6 +133,7 @@ th, td {
     border:  1px solid #a7a7a7;
     border-radius: 5px;
     color: #4c4c4c;
+    font-size: 18px;
 }
 
 .filter-container button .material-symbols-outlined{

@@ -7,17 +7,17 @@
 .flex-container{
   display: flex;
   flex-direction: row;
+  align-items: stretch;
 }
 
 .flex-container .flex-form{
-  flex-grow: 3;
+  flex-grow: 5;
   align-content: center;
-  margin-left: 2rem;
-  padding-left: 3rem;
+  margin-left: 7vw;
 }
 
 .flex-container .flex-illust{
-  flex-grow: 5;
+  flex-grow: 3;
 }
 
 .flex-container .flex-illust img{
@@ -38,8 +38,7 @@ body {
 form {
   width: 100%;
   flex: 1;
-  margin: 3rem auto;
-  padding: 2rem;
+  padding: 2vi;
 }
 
 form a{
@@ -54,12 +53,9 @@ form a:hover{
 
 .control,
 fieldset {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
-.control.no-margin {
-  margin-bottom: 1.5rem;
-}
 
 .control label {
   line-height: 1.25rem;

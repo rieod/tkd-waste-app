@@ -1,4 +1,4 @@
-export function isEmail(value) {
+export function isUsername(value) {
   return value.includes('@');
 }
 
