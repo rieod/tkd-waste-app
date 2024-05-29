@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const sqlite3 = require('splite3').verbose();
+const sqlite3 = require('sqlite3').verbose();
 
 app.use(cors());
 app.use((req, res, next)=> {
@@ -17,7 +17,7 @@ let db = sqlite3.Database('credentials.db', (err) => {
     console.log('Connected to the access database.');
 });
 
-app.post('/validatePassword', (req, res) => {
+app.post('/DataManagement', (req, res) => {
     const { username, password } = req.body;
 
     db.all(`select * from credentials where username = '${username}' and password = '${password}'`, (err, row) => {

@@ -93,7 +93,7 @@
   background-color: #80A5D6;
 }
 
-ul li {
+ul li{
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25rem;
@@ -102,5 +102,6 @@ ul li {
     margin-left: 20px;
 
 }
+
 
 

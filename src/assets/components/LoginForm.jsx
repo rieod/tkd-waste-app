@@ -50,7 +50,7 @@ export default function LoginForm() {
     console.log(enteredValues);
 
     const {username, password} = value;
-    axios.post('http//localhost:5173/validatepassword', {username, password})
+    axios.post('http//localhost:5173/DataManagement', {username, password})
     .then(res => {
       if(res.data.validation){
         alert('Your password is correct. Thankyou for your service!');
@@ -80,28 +80,27 @@ export default function LoginForm() {
     <form onSubmit={hanldeSubmit}>
       <div className="control-column">
         <Input 
-        label="username" 
-        id="username" 
-        type="username" 
-        name="username" 
-        placeholder="johndoe99"
-        onBlur={() => handleInputBlur('username')}
-        onChange={(event) => handleInputChange('username', event.target.value)}
-        value={enteredValues.username}
-        error = {usernameIsInvalid && 'Please enter a valid username!'}
+          label="username" 
+          id="username" 
+          type="username" 
+          name="username" 
+          placeholder="johndoe99"
+          onBlur={() => handleInputBlur('username')}
+          onChange={(event) => handleInputChange('username', event.target.value)}
+          value={enteredValues.username}
+          error = {usernameIsInvalid && 'Please enter a valid username!'}
         />
 
       <Input 
-        label="password" 
-        id="password" 
-        type="password" 
-        name="password" 
-        placeholder="Enter your password"
-        onBlur={() => handleInputBlur('password')}
-        onChange={(event) => handleInputChange('password', event.target.value)}
-        value={enteredValues.password}
-        error = {passwordIsInvalid && 'Please enter a valid password!'}
-
+          label="password" 
+          id="password" 
+          type="password" 
+          name="password" 
+          placeholder="Enter your password"
+          onBlur={() => handleInputBlur('password')}
+          onChange={(event) => handleInputChange('password', event.target.value)}
+          value={enteredValues.password}
+          error = {passwordIsInvalid && 'Please enter a valid password!'}
         />
 
         {/* <div className="control no-margin">
