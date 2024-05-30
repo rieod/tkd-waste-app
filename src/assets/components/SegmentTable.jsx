@@ -1,4 +1,4 @@
-// import ActionButton from './ActionButton';
+import ActionButton from './ActionButton';
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -12,8 +12,14 @@ import { useEffect, useState } from "react";
 export default function SegmentTable(){
     const [data, setData] = useState([]);
     useEffect(()=>{
-        axios.get('http://127.0.0.1:5173/credentials')
-        .then(setData(data));
+        axios.get('http://127.0.0.1:5173/DataManagement')
+        // .then(data => {
+        //     console.log(data);
+        //     setData(data);
+        // })
+
+        .then(response => response.json())
+        .then(data => setData(data));
     },[]);
 
     return(
@@ -30,10 +36,11 @@ export default function SegmentTable(){
                 return (
                     <tbody>
                         <tr key={key}>
+                            <td>{val.id}</td>
                             <td>{val.username}</td>
                             <td>{val.password}</td>
                             {/* <td>{val.instances}</td> */}
-                            {/* <td><ActionButton /></td> */}
+                            <td><ActionButton /></td>
                         </tr>
                     </tbody>
                 );

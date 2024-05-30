@@ -41,15 +41,29 @@ const db = new sqlite3.Database('credentials.db', sqlite3.OPEN_READONLY, (err) =
 
 //DATA MANAGEMENT
 
-db.get('/credentials', (req, res) => {
-        // const {username, password} = req.body;
-        // db.each(`select * from credentials`, (err, row) => {
-        //     if(err){
-        //         console.error(err.message);
-        //     }
-        //     console.log(row.username + "\t" + row.password);
-        // });
+// db.get('/credentials', () => {
+//     //     const {username, password} = req.body;
+//     //     db.each(`select * from credentials`, (err, row) => {
+//     //         if(err){
+//     //             console.error(err.message);
+//     //         }
+//     //         console.log(row.username + "\t" + row.password);
+//     //     });
 
-        db.all('select * from users');
-    }
-);
+//         db.all('select * from users');
+
+//         // const sql = "SELECT * FROM users";
+//         // let stmt = db.prepare(sql);
+//         // let res = stmt.all()
+//         // return res;
+//     }
+// );
+
+db.get('/DataManagement', () => {
+    db.each(`SELECT * FROM users`, (err, row) => {
+      if (err) {
+        console.error(err.message);
+      }
+      console.log(row.id + "\t" + row.username + "\t" + row.password);
+    });
+  })
