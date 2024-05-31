@@ -3,9 +3,11 @@ const app = express();
 const cors = require('cors');
 const { all } = require('axios');
 const sqlite3 = require('sqlite3').verbose();
+// const bodyParser = require('body-parse');
 
 
 app.use(cors());
+// app.use(bodyParser.json());
 
 app.use((req, res, next)=> {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -20,46 +22,27 @@ const db = new sqlite3.Database('credentials.db', sqlite3.OPEN_READONLY, (err) =
     console.log('Connected to the access database.');
 });
 
-//LOGIN
+// //LOGIN
 
-// app.post('/DataManagement', (req, res) => {
-//     const { username, password } = req.body;
+// // app.post('/DataManagement', (req, res) => {
+// //     const { username, password } = req.body;
 
-//     db.all(`select * from credentials where username = '${username}' and password = '${password}'`, (err, row) => {
-//         if(err){
-//             throw err;
-//         }
-//         if(row.length >0){
-//             res.send({validation:true})
-//         } else {
-//             res.send({validation:false})
-//         }
-//     })
-// });
+// //     db.all(`select * from credentials where username = '${username}' and password = '${password}'`, (err, row) => {
+// //         if(err){
+// //             throw err;
+// //         }
+// //         if(row.length >0){
+// //             res.send({validation:true})
+// //         } else {
+// //             res.send({validation:false})
+// //         }
+// //     })
+// // });
 
-// app.listen(5173, () => console.log('Listening at port 5173'));
+// // app.listen(5173, () => console.log('Listening at port 5173'));
 
-//DATA MANAGEMENT
-
-// db.get('/credentials', () => {
-//     //     const {username, password} = req.body;
-//     //     db.each(`select * from credentials`, (err, row) => {
-//     //         if(err){
-//     //             console.error(err.message);
-//     //         }
-//     //         console.log(row.username + "\t" + row.password);
-//     //     });
-
-//         db.all('select * from users');
-
-//         // const sql = "SELECT * FROM users";
-//         // let stmt = db.prepare(sql);
-//         // let res = stmt.all()
-//         // return res;
-//     }
-// );
-
-db.get('/DataManagement', () => {
+// //DATA MANAGEMENT
+db.get('/users', () => {
     db.each(`SELECT * FROM users`, (err, row) => {
       if (err) {
         console.error(err.message);
@@ -67,3 +50,4 @@ db.get('/DataManagement', () => {
       console.log(row.id + "\t" + row.username + "\t" + row.password);
     });
   })
+

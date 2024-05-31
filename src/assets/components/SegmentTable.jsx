@@ -3,24 +3,25 @@ import ActionButton from './ActionButton';
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-// const data = [
-//     { name: "Anom", category: "Fruit & Vegies", description: "Lorem ipsum dolor sit amet consectetur." },
-//     { name: "Megha", category: "Meat", description: "Lorem ipsum dolor sit amet consectetur." },
-//     { name: "Subham", category: "Dairy", description: "Lorem ipsum dolor sit amet consectetur." },
-// ]
-
 export default function SegmentTable(){
     const [data, setData] = useState([]);
     useEffect(()=>{
-        axios.get('http://127.0.0.1:5173/DataManagement')
-        // .then(data => {
-        //     console.log(data);
-        //     setData(data);
-        // })
-
-        .then(response => response.json())
-        .then(data => setData(data));
+        fetchData();
     },[]);
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://127.0.0.1:5173/users');
+            setData(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    // useEffect(()=>{
+    //     axios.get('https://jsonplaceholder.typicode.com/users')
+    //     .then(res => {setData(res.data)});
+    // }, []);
 
     return(
         <table>
@@ -32,14 +33,13 @@ export default function SegmentTable(){
                 <th></th>
             </tr>
             </thead>
-            {data.map((val,key)=>{
+            {data.map((val,key) => {
                 return (
                     <tbody>
                         <tr key={key}>
                             <td>{val.id}</td>
                             <td>{val.username}</td>
                             <td>{val.password}</td>
-                            {/* <td>{val.instances}</td> */}
                             <td><ActionButton /></td>
                         </tr>
                     </tbody>

@@ -1,5 +1,3 @@
-import { Link, Outlet } from 'react-router-dom';
-
 import logoImg from '../image/logo.png';
 import './style/Navbar.css'
 
@@ -9,12 +7,12 @@ export default function Navbar(){
             <nav>
                 <div className='navbar-content'>
                     <ul className='flex-navbar'>
-                        <li><Link to='DataManagement'><img src={logoImg}/></Link></li>
+                        <li><img src={logoImg}/></li>
                         <li>
-                            <Link to='/DataManagement'>Data Management</Link>
+                            Data Management
                         </li>
                         <li>
-                            <Link to='/GenerateCode'>QR Generator</Link>
+                            QR Generator
                         </li>
                     </ul>
                     <ul className='flex-userdropdwn'>
@@ -23,13 +21,12 @@ export default function Navbar(){
                             <span className="material-icons">expand_more</span>
                         </button>
                         <div className="userdropdwn-content">
-                            <Link to='/Login'>Logout</Link>
+                            Logout
                         </div>
                     </ul>
                 </div>   
             </nav>
 
-            <Outlet />
         </>
     
     );
